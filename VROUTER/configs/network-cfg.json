@@ -1,0 +1,56 @@
+{
+	"devices" :{
+		"of:00000000000000a1" : {
+			"basic" : {
+				"driver" : "softrouter"
+			}
+		}
+	},
+	"ports" : {
+		"of:00000000000000a1/1" : {
+			"interfaces" : [
+				{
+					"name" : "sw1-1",
+					"ips"  : [ "10.0.1.101/24" ],
+					"mac"  : "00:00:00:00:00:01"
+				}
+			]
+		},
+		"of:00000000000000a1/2" : {
+			"interfaces" : [
+				{
+					"name" : "sw1-2",
+					"ips"  : [ "10.0.2.101/24" ],
+					"mac"  : "00:00:00:00:00:01"
+				}
+			]
+		},
+		"of:00000000000000a1/3" : {
+			"interfaces" : [
+				{
+					"name" : "sw1-3",
+					"ips"  : [ "10.0.3.101/24" ],
+					"mac"  : "00:00:00:00:00:01"
+				}
+			]
+		},
+		"of:00000000000000a1/4" : {
+			"interfaces" : [
+				{
+					"name" : "sw1-4",
+					"ips"  : [ "10.0.4.101/24" ],
+					"mac"  : "00:00:00:00:00:01"
+				}
+			]
+		}
+	},
+	"apps" : {
+		"org.onosproject.router" : {
+			"router":{
+				"controlPlaneConnectPoint" : "of:00000000000000a1/5",
+				"ospfEnabled" : "true",
+				"interfaces" : ["sw1-1","sw1-2","sw1-3","sw1-4"]
+			}
+		}
+	}
+}
